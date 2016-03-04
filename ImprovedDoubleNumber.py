@@ -2,13 +2,16 @@
 
 number = raw_input("What number should I double? ")
 
-while number != "no": 
+converted = False
+
+while not converted: # not converted, not false, which is True
 	try: 														
 		number = float(number)									
-		print("Double that is {}. ".format(number * 2))			 
 	except ValueError: 											
-		raw_input("Sorry that's not a number. Try again or type 'no' to quit. ")
+		number = raw_input("Sorry that's not a number. Try again. ")
 	else: 
-		print("Have a nice day!")
-		exit()
+		converted = True 
+
+# goes to this when you convert to float successfully 
+print("Double that is {}. ".format(number * 2) 
 
